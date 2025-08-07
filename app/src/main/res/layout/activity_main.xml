@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="🆘 Emergency AI Messenger"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:paddingBottom="10dp" />
+
+    <EditText
+        android:id="@+id/inputMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Describe your emergency..."
+        android:minHeight="100dp"
+        android:gravity="top"
+        android:background="@android:drawable/editbox_background" />
+
+    <Button
+        android:id="@+id/btnGenerate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Generate SOS Message"
+        android:layout_marginTop="10dp" />
+
+    <TextView
+        android:id="@+id/generatedMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Generated message will appear here"
+        android:textStyle="italic"
+        android:paddingTop="10dp" />
+
+    <Button
+        android:id="@+id/btnSend"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Send via Bluetooth"
+        android:layout_marginTop="15dp" />
+
+    <TextView
+        android:id="@+id/statusLog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Status messages will appear here"
+        android:paddingTop="15dp"
+        android:textColor="#FF0000"
+        android:textStyle="italic" />
+</LinearLayout>

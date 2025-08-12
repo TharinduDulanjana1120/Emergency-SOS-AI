@@ -1,11 +1,7 @@
-object SOSGenerator{
-    fun generateSOS(reason: String, location: String, extra: String = ""): String{
-        return """
-            🚨 EMERGENCY 🚨
-            Reason: $reason
-            Location : $location
-            $extra
-            Please send help immediately.
-            """".trimIndent()
+package com.tharindu.emergencyai
+
+object SOSGenerator {
+    fun generateSOS(reason: String, location: String): String {
+        return "🚨 EMERGENCY ALERT 🚨\nReason: $reason\nLocation: $location\nPlease send help immediately!"
     }
 }

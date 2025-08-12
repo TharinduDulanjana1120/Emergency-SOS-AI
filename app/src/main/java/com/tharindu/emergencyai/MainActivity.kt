@@ -11,14 +11,29 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val inputMessage = findViewById<EditText>(R.id.inputMessage)
-        val generatedMessage = findViewById<TextView>(R.id.generatedMessage)
-        val btnGenerate = findViewById<Button>(R.id.btnGenerate)
+        val reasonInput = findViewById<EditText>(R.id.reasonInput)
+        val locationInput = findViewById<EditText>(R.id.locationInput)
+        val output = findViewById<TextView>(R.id.generatedText)
+        val btnGenerate = findViewById<Button>(R.id.generateBtn)
+        val btnSend = findViewById<Button>(R.id.sendBtn)
+        val statusLog = findViewById<TextView>(R.id.statusLog)
 
         btnGenerate.setOnClickListener {
-            val reason = inputMessage.text.toString()
-            val result = SOSGenerator.generateSOS(reason)
-            generatedMessage.text = result
+            val reason = reasonInput.text.toString()
+            val location = locationInput.text.toString()
+            val result = SOSGenerator.generateSOS(reason, location)
+            output.text = result
+        }
+
+        btnSend.setOnClickListener {
+            val message = output.text.toString()
+            if (message.isNotEmpty()) {
+                BluetoothHelper.sendMessage(message) { status ->
+                    statusLog.text = status
+                }
+            } else {
+                statusLog.text = "Generate a message first."
+            }
         }
     }
 }

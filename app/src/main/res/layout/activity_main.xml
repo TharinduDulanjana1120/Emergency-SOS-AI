@@ -16,23 +16,33 @@
         android:paddingBottom="10dp" />
 
     <EditText
-        android:id="@+id/inputMessage"
+        android:id="@+id/reasonInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Describe your emergency..."
-        android:minHeight="100dp"
+        android:hint="Reason for emergency"
+        android:minHeight="60dp"
+        android:gravity="top"
+        android:background="@android:drawable/editbox_background" />
+
+    <EditText
+        android:id="@+id/locationInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Your current location"
+        android:layout_marginTop="10dp"
+        android:minHeight="60dp"
         android:gravity="top"
         android:background="@android:drawable/editbox_background" />
 
     <Button
-        android:id="@+id/btnGenerate"
+        android:id="@+id/generateBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Generate SOS Message"
         android:layout_marginTop="10dp" />
 
     <TextView
-        android:id="@+id/generatedMessage"
+        android:id="@+id/generatedText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Generated message will appear here"
@@ -40,7 +50,7 @@
         android:paddingTop="10dp" />
 
     <Button
-        android:id="@+id/btnSend"
+        android:id="@+id/sendBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Send via Bluetooth"
